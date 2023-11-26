@@ -1,6 +1,26 @@
 #include <iostream>
+using namespace std;
+
+int NWD(int a, int b)
+{
+    while(a!=b)
+        if(a>b)
+            a-=b; //lub a = a - b;
+        else
+            b-=a; //lub b = b-a
+    return a; // lub b - obie zmienne przechowują wynik NWD(a,b)
+}
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    int a, b;
+
+    cout<<"Podaj pierwsza liczbe: ";
+    cin>>a;
+
+    cout<<"Podaj druga liczbe: ";
+    cin>>b;
+
+    cout<<"NWD("<<a<<","<<b<<") = "<<NWD(a,b)<<endl;
+
     return 0;
 }
